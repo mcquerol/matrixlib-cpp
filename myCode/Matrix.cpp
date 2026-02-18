@@ -41,7 +41,7 @@ void Matrix::checkMultiplicationDimensions(Matrix rhs) const
 
 const std::pair<size_t, size_t> Matrix::getDimensions() const
 {
-	return pair(m_rows , m_cols);
+	return pair<double, double>(m_rows , m_cols);
 }
 
 
@@ -57,27 +57,38 @@ const double& Matrix::at(size_t row, size_t col) const
 
 void Matrix::print() const
 {
-	cout << "";
+	size_t r, c = 0;
+	for(r = 0; r < m_rows; r++)
+	{
+		cout << "[ ";
+		for(c = 0; c < m_cols; c++)
+		{
+			cout << m_data[r * m_cols + c] << " ";
+		}
+		cout << endl;
+	}
+
 }
 
 Matrix& Matrix::transpose()
 {
-	return this;
+	return *this;
 }
 
 Matrix& Matrix::flipHorizontal()
 {
-	return this;
+	return *this;
 }
 
 Matrix& Matrix::flipVertical()
 {
-	return this;
+	return *this;
 }
 
 const double& Matrix::determinant() const
 {
-	return 0.0F;
+    static double dummy = 0.0;
+    return dummy;
 }
 
 Matrix Matrix::minorMatrix(size_t row, size_t col) const
