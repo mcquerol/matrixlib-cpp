@@ -28,7 +28,9 @@ public:
 	const double& at(size_t row, size_t col) const;
 	void print() const;
 
-
+	Matrix& transpose();
+	Matrix& flipHorizontal();
+	Matrix& flipVertical();
 
 
 };
