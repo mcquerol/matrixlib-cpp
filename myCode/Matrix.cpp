@@ -10,7 +10,7 @@
 
 using namespace std;
 
-Matrix::Matrix(size_t rows, size_t cols) : m_rows(rows), m_cols(cols)
+Matrix::Matrix(size_t rows, size_t cols) : m_rows(rows), m_cols(cols), m_data(m_rows * m_cols)
 {
 }
 
@@ -33,18 +33,18 @@ void Matrix::checkMultiplicationDimensions(Matrix rhs) const
 
 const std::pair<size_t, size_t> Matrix::getDimensions() const
 {
-	return pair(0,0);
+	return pair(m_rows , m_cols);
 }
 
 
-double& Matrix::set(size_t row, size_t col)
+void Matrix::set(size_t row, size_t col, double value)
 {
-	return 0.0F;
+	m_data[row * m_cols + col] = value;
 }
 
 const double& Matrix::at(size_t row, size_t col) const
 {
-	return 0.0F;
+	return m_data[row * m_cols + col];
 }
 
 void Matrix::print() const
