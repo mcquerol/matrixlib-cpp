@@ -32,7 +32,9 @@ public:
 	Matrix& flipHorizontal();
 	Matrix& flipVertical();
 
-
+	const double& determinant() const;
+	Matrix& minorMatrix(size_t row, size_t col);
+	double dot(Matrix other) const;
 };
 
 
