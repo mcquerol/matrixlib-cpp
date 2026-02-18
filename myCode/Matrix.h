@@ -9,6 +9,7 @@
 #define MATRIX_H_
 
 #include <vector>
+#include <ostream>
 #include <stdlib.h>
 
 class Matrix {
@@ -32,7 +33,7 @@ public:
 	const size_t getCols() const;
 	void set(size_t row, size_t col, double value);
 	const double& at(size_t row, size_t col) const;
-	void print() const;
+	friend std::ostream& operator<<(std::ostream&, const Matrix& m);
 
 	Matrix& transpose();
 	Matrix& flipHorizontal();

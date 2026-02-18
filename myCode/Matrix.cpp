@@ -55,19 +55,28 @@ const double& Matrix::at(size_t row, size_t col) const
 	return m_data[row * m_cols + col];
 }
 
-void Matrix::print() const
+ostream& operator<<(std::ostream& os, const Matrix&m)
 {
 	size_t r, c = 0;
-	for(r = 0; r < m_rows; r++)
+	for(r = 0; r < m.m_rows; r++)
 	{
-		cout << "[ ";
-		for(c = 0; c < m_cols; c++)
+		os << "[";
+		for(c = 0; c < m.m_cols; c++)
 		{
-			cout << m_data[r * m_cols + c] << " ";
+			if(c == m.m_cols - 1)
+			{
+				os << m.m_data[r * m.m_cols + c];
+			}
+			else
+			{
+				os << m.m_data[r * m.m_cols + c] << " ";
+			}
 		}
-		cout << endl;
+		os << "]";
+		os << endl;
 	}
 
+	return os;
 }
 
 Matrix& Matrix::transpose()
