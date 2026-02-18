@@ -18,12 +18,17 @@ private:
 	size_t m_cols;
 	std::vector<double> m_data;
 
+	bool isSquare() const;
+	void checkIndexOutOfBounds(size_t row, size_t col) const;
+	void checkAddSubtractDimensions(Matrix rhs) const;
+	void checkMultiplicationDimensions(Matrix rhs) const;
+	const std::pair<size_t, size_t> getDimensions() const;
+
 public:
 	Matrix();
 	Matrix(size_t rows = 2, size_t cols = 2);
 	virtual ~Matrix();
 
-	const std::pair<size_t, size_t> getDimensions() const;
 	double& at(size_t row, size_t col);
 	const double& at(size_t row, size_t col) const;
 	void print() const;
@@ -33,7 +38,7 @@ public:
 	Matrix& flipVertical();
 
 	const double& determinant() const;
-	Matrix& minorMatrix(size_t row, size_t col);
+	Matrix minorMatrix(size_t row, size_t col) const;
 	double dot(Matrix other) const;
 
 	Matrix operator+(Matrix rhs) const;
@@ -45,7 +50,6 @@ public:
 
 	bool operator==(Matrix rhs) const;
 	bool operator!=(Matrix rhs) const;
-
 
 
 };
