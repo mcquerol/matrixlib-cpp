@@ -29,7 +29,7 @@ public:
 	Matrix(size_t rows = 2, size_t cols = 2);
 	virtual ~Matrix();
 
-	double& at(size_t row, size_t col);
+	double& set(size_t row, size_t col);
 	const double& at(size_t row, size_t col) const;
 	void print() const;
 
