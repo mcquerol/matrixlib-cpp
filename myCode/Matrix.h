@@ -29,6 +29,8 @@ public:
 	Matrix(size_t rows = 2, size_t cols = 2);
 	virtual ~Matrix();
 
+	const size_t getRows() const;
+	const size_t getCols() const;
 	void set(size_t row, size_t col, double value);
 	const double& at(size_t row, size_t col) const;
 	void print() const;
