@@ -16,7 +16,7 @@ int main ()
     // TODO: Add your program code here
 
 	Matrix m(3,5);
-	m.print();
+	cout << m;
 
 	cout << "matrix-cpp has started." << endl;
 
