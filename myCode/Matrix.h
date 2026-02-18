@@ -19,7 +19,7 @@ private:
 	std::vector<double> m_data;
 
 	bool isSquare() const;
-	void checkIndexOutOfBounds(size_t row, size_t col) const;
+	bool checkIndexOutOfBounds(size_t row, size_t col) const;
 	void checkAddSubtractDimensions(Matrix rhs) const;
 	void checkMultiplicationDimensions(Matrix rhs) const;
 	const std::pair<size_t, size_t> getDimensions() const;
