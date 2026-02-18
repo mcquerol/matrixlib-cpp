@@ -35,6 +35,19 @@ public:
 	const double& determinant() const;
 	Matrix& minorMatrix(size_t row, size_t col);
 	double dot(Matrix other) const;
+
+	Matrix operator+(Matrix rhs) const;
+	Matrix operator-(Matrix rhs) const;
+	Matrix operator*(Matrix rhs) const;
+
+	Matrix operator*(double scalar) const;
+	Matrix operator/(double scalar) const;
+
+	bool operator==(Matrix rhs) const;
+	bool operator!=(Matrix rhs) const;
+
+
+
 };
 
 
