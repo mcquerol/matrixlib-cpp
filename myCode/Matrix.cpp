@@ -19,8 +19,16 @@ bool Matrix::isSquare() const
 	return false; // default value
 }
 
-void Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
+bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 {
+	if(row > m_rows && col > m_cols)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 }
 
 void Matrix::checkAddSubtractDimensions(Matrix rhs) const
@@ -110,6 +118,16 @@ Matrix Matrix::operator /(double scalar) const
 bool Matrix::operator ==(Matrix rhs) const
 {
 	return false;
+}
+
+const size_t Matrix::getRows() const
+{
+	return m_rows;
+}
+
+const size_t Matrix::getCols() const
+{
+	return m_cols;
 }
 
 bool Matrix::operator !=(Matrix rhs) const
