@@ -20,7 +20,17 @@ private:
 
 public:
 	Matrix();
+	Matrix(size_t rows = 2, size_t cols = 2);
 	virtual ~Matrix();
+
+	const std::pair<size_t, size_t> getDimensions() const;
+	double& at(size_t row, size_t col);
+	const double& at(size_t row, size_t col) const;
+	void print() const;
+
+
+
+
 };
 
 
