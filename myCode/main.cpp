@@ -13,7 +13,7 @@ using namespace std;
 int main ()
 {
     // TODO: Add your program code here
-	cout << "matrix-cpp started." << endl << endl;
+	cout << "matrix-cpp has started." << endl;
 
 	return 0;
 }
