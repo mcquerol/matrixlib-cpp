@@ -47,6 +47,8 @@ public:
 	Matrix operator-(Matrix rhs) const;
 	Matrix operator*(Matrix rhs) const;
 
+	Matrix operator+(double scalar) const;
+	Matrix operator-(double scalar) const;
 	Matrix operator*(double scalar) const;
 	Matrix operator/(double scalar) const;
 
