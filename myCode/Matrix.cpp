@@ -23,6 +23,7 @@ bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 {
 	if(row > m_rows && col > m_cols)
 	{
+		throw out_of_range("index out of range");
 		return false;
 	}
 	else
@@ -44,14 +45,20 @@ const std::pair<size_t, size_t> Matrix::getDimensions() const
 	return pair<double, double>(m_rows , m_cols);
 }
 
-void Matrix::set(size_t row, size_t col, double value)
+double& Matrix::operator ()(size_t row, size_t col)
 {
-	m_data[row * m_cols + col] = value;
+	return m_data[row * m_cols + col];
 }
 
 const double& Matrix::at(size_t row, size_t col) const
 {
-	return m_data[row * m_cols + col];
+	double d = 0.0;
+	if(checkIndexOutOfBounds(row, col))
+	{
+		d = m_data[row * m_cols + col];
+	}
+	return d;
+
 }
 
 ostream& operator<<(std::ostream& os, const Matrix& m)
