@@ -127,7 +127,16 @@ Matrix Matrix::operator *(Matrix rhs) const
 
 Matrix Matrix::operator *(double scalar) const
 {
-	return Matrix(0,0);
+	size_t r, c = 0;
+	Matrix m;
+	for(r = 0; r < m_rows; m_rows++)
+	{
+		for(r = 0; r < m_rows; m_rows++)
+		{
+			m.m_data[r * m.m_cols + c] = m_data[r * m_cols + c] * scalar;
+		}
+	}
+	return m;
 }
 
 Matrix Matrix::operator /(double scalar) const
