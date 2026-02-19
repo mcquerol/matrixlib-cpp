@@ -44,7 +44,6 @@ const std::pair<size_t, size_t> Matrix::getDimensions() const
 	return pair<double, double>(m_rows , m_cols);
 }
 
-
 void Matrix::set(size_t row, size_t col, double value)
 {
 	m_data[row * m_cols + col] = value;
@@ -127,21 +126,26 @@ Matrix Matrix::operator *(Matrix rhs) const
 
 Matrix Matrix::operator *(double scalar) const
 {
-	size_t r, c = 0;
-	Matrix m;
-	for(r = 0; r < m_rows; m_rows++)
-	{
-		for(r = 0; r < m_rows; m_rows++)
-		{
-			m.m_data[r * m.m_cols + c] = m_data[r * m_cols + c] * scalar;
-		}
-	}
-	return m;
+    Matrix m(m_rows, m_cols);
+
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] * scalar;
+    }
+
+    return m;
 }
 
 Matrix Matrix::operator /(double scalar) const
 {
-	return Matrix(0,0);
+    Matrix m(m_rows, m_cols);
+
+    if (scalar == 0.0)
+    {
+        throw std::runtime_error("Division by zero in Matrix::operator/");
+    }
+
+    return (*this) * (1.0 / scalar);
 }
 
 bool Matrix::operator ==(Matrix rhs) const
