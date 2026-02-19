@@ -138,7 +138,6 @@ Matrix Matrix::operator *(double scalar) const
 
 Matrix Matrix::operator /(double scalar) const
 {
-    Matrix m(m_rows, m_cols);
 
     if (scalar == 0.0)
     {
