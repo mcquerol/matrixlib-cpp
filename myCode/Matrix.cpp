@@ -55,7 +55,7 @@ const double& Matrix::at(size_t row, size_t col) const
 	return m_data[row * m_cols + col];
 }
 
-ostream& operator<<(std::ostream& os, const Matrix&m)
+ostream& operator<<(std::ostream& os, const Matrix& m)
 {
 	size_t r, c = 0;
 	for(r = 0; r < m.m_rows; r++)
