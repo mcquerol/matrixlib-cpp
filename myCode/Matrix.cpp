@@ -138,12 +138,20 @@ Matrix Matrix::operator *(double scalar) const
 
 Matrix Matrix::operator /(double scalar) const
 {
+	Matrix m(m_rows, m_cols);
+
     if (scalar == 0.0)
     {
         throw std::runtime_error("Division by zero in Matrix::operator/");
     }
 
-    return (*this) * (1.0 / scalar);
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] / scalar;
+    }
+
+    return m;
+
 }
 
 bool Matrix::operator ==(Matrix rhs) const
