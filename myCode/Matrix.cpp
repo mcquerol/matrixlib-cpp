@@ -126,19 +126,11 @@ Matrix Matrix::operator *(Matrix rhs) const
 
 Matrix Matrix::operator *(double scalar) const
 {
-    Matrix m(m_rows, m_cols);
-
-    for (size_t i = 0; i < m_data.size(); ++i)
-    {
-        m.m_data[i] = m_data[i] * scalar;
-    }
-
-    return m;
+	return (*this) * scalar;
 }
 
 Matrix Matrix::operator /(double scalar) const
 {
-
     if (scalar == 0.0)
     {
         throw std::runtime_error("Division by zero in Matrix::operator/");
