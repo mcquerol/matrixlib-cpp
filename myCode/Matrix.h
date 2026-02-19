@@ -31,7 +31,7 @@ public:
 
 	const size_t getRows() const;
 	const size_t getCols() const;
-	void set(size_t row, size_t col, double value);
+	double& operator()(size_t row, size_t col);
 	const double& at(size_t row, size_t col) const;
 	friend std::ostream& operator<<(std::ostream&, const Matrix& m);
 
