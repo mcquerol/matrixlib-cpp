@@ -126,7 +126,14 @@ Matrix Matrix::operator *(Matrix rhs) const
 
 Matrix Matrix::operator *(double scalar) const
 {
-	return (*this) * scalar;
+    Matrix m(m_rows, m_cols);
+
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] * scalar;
+    }
+
+    return m;
 }
 
 Matrix Matrix::operator /(double scalar) const
@@ -152,6 +159,30 @@ const size_t Matrix::getRows() const
 const size_t Matrix::getCols() const
 {
 	return m_cols;
+}
+
+Matrix Matrix::operator +(double scalar) const
+{
+    Matrix m(m_rows, m_cols);
+
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] + scalar;
+    }
+
+    return m;
+}
+
+Matrix Matrix::operator -(double scalar) const
+{
+    Matrix m(m_rows, m_cols);
+
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] - scalar;
+    }
+
+    return m;
 }
 
 bool Matrix::operator !=(Matrix rhs) const
