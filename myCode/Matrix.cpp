@@ -16,7 +16,11 @@ Matrix::Matrix(size_t rows, size_t cols) : m_rows(rows), m_cols(cols), m_data(m_
 
 bool Matrix::isSquare() const
 {
-	return false; // default value
+	if(m_rows == m_cols)
+	{
+		return true;
+	}
+	return false;
 }
 
 bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
