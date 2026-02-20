@@ -54,14 +54,17 @@ double& Matrix::operator ()(size_t row, size_t col)
 	return m_data[row * m_cols + col];
 }
 
-const double& Matrix::at(size_t row, size_t col) const
+const double Matrix::at(size_t row, size_t col) const
 {
-	double d = 0.0;
-	if(checkIndexOutOfBounds(row, col))
+
+	if(!checkIndexOutOfBounds(row, col))
 	{
-		d = m_data[row * m_cols + col];
+		return 0;
 	}
-	return d;
+	else
+	{
+		return m_data[row * m_cols + col];
+	}
 
 }
 
