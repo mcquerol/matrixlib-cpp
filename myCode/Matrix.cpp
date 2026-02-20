@@ -20,7 +20,10 @@ bool Matrix::isSquare() const
 	{
 		return true;
 	}
-	return false;
+	else
+	{
+		return false;
+	}
 }
 
 bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
