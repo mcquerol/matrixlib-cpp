@@ -27,11 +27,11 @@ bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 {
 	if(row > m_rows && col > m_cols)
 	{
-		return false;
+		return true;
 	}
 	else
 	{
-		return true;
+		return false;
 	}
 }
 
