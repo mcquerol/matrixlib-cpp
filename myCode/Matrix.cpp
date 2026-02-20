@@ -219,5 +219,13 @@ Matrix Matrix::operator -(double scalar) const
 
 bool Matrix::operator !=(Matrix rhs) const
 {
+	for (size_t i = 0; i < m_data.size(); ++i)
+	{
+		if(m_data[i] != rhs.m_data[i])
+		{
+			return true;
+		}
+	}
+
 	return false;
 }
