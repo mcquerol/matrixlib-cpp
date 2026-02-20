@@ -32,7 +32,7 @@ public:
 	const size_t getRows() const;
 	const size_t getCols() const;
 	double& operator()(size_t row, size_t col);
-	const double& at(size_t row, size_t col) const;
+	const double at(size_t row, size_t col) const;
 	friend std::ostream& operator<<(std::ostream&, const Matrix& m);
 
 	Matrix& transpose();
