@@ -27,7 +27,6 @@ bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 {
 	if(row > m_rows && col > m_cols)
 	{
-		throw out_of_range("index out of range");
 		return false;
 	}
 	else
@@ -57,9 +56,9 @@ double& Matrix::operator ()(size_t row, size_t col)
 const double Matrix::at(size_t row, size_t col) const
 {
 
-	if(!checkIndexOutOfBounds(row, col))
+	if(checkIndexOutOfBounds(row, col))
 	{
-		return 0;
+		throw out_of_range("index out of range");
 	}
 	else
 	{
