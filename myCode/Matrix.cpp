@@ -172,15 +172,20 @@ Matrix Matrix::operator /(double scalar) const
 
 bool Matrix::operator ==(Matrix rhs) const
 {
-	for (size_t i = 0; i < m_data.size(); ++i)
-	{
-		if(m_data[i] == rhs.m_data[i])
-		{
-			return true;
-		}
-	}
+    // First, check if dimensions (size) are the same
+    if (m_data.size() != rhs.m_data.size())
+    {
+        return false;
+    }
 
-	return false;
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        if (m_data[i] != rhs.m_data[i]) {
+            return false;  // Found a differing element
+        }
+    }
+
+    return true;
 }
 
 const size_t Matrix::getRows() const
@@ -219,13 +224,4 @@ Matrix Matrix::operator -(double scalar) const
 
 bool Matrix::operator !=(Matrix rhs) const
 {
-	for (size_t i = 0; i < m_data.size(); ++i)
-	{
-		if(m_data[i] != rhs.m_data[i])
-		{
-			return true;
-		}
-	}
-
-	return false;
 }
