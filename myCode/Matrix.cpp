@@ -127,7 +127,14 @@ double Matrix::dot(Matrix other) const
 
 Matrix Matrix::operator +(Matrix rhs) const
 {
-	return Matrix(0,0);
+    Matrix m(m_rows, m_cols);
+
+    for (size_t i = 0; i < m_data.size(); ++i)
+    {
+        m.m_data[i] = m_data[i] + rhs.m_data[i];
+    }
+
+    return m;
 }
 
 Matrix Matrix::operator -(Matrix rhs) const
@@ -224,4 +231,5 @@ Matrix Matrix::operator -(double scalar) const
 
 bool Matrix::operator !=(Matrix rhs) const
 {
+	return !(*this == rhs);  // Simply return negation of equality
 }
