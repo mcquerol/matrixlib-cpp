@@ -57,6 +57,7 @@ int main ()
 	    std::cout << "Matrices are not equal!" << std::endl;
 	}
 
+	cout << m1 + m2;
 
 	return 0;
 }
