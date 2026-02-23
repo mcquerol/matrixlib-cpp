@@ -27,7 +27,7 @@ private:
 
 public:
 	Matrix();
-	Matrix(size_t rows = 2, size_t cols = 2);
+	Matrix(size_t rows = 2, size_t cols = 1);
 
 	const size_t getRows() const;
 	const size_t getCols() const;
