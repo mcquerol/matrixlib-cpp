@@ -32,14 +32,7 @@ bool Matrix::isSquare() const
 
 bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 {
-	if(row > m_rows && col > m_cols)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return row > m_rows && col > m_cols;
 }
 
 void Matrix::checkAddSubtractDimensions(Matrix rhs) const
