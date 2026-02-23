@@ -10,8 +10,25 @@
 
 using namespace std;
 
-Matrix::Matrix(size_t rows, size_t cols) : m_rows(rows), m_cols(cols), m_data(m_rows * m_cols)
+Matrix::Matrix(size_t rows, size_t cols)
 {
+	if(m_cols < 0)
+	{
+		m_cols = 0;
+	}
+	else
+	{
+		m_cols = cols;
+	}
+	if(m_rows < 0)
+	{
+		m_rows = 0;
+	}
+	else
+	{
+		m_rows = rows;
+	}
+	m_data = new vector<double>(m_rows * m_cols);
 }
 
 bool Matrix::isSquare() const
