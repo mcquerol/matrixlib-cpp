@@ -41,6 +41,7 @@ void Matrix::checkAddSubtractDimensions(Matrix rhs) const
 
 void Matrix::checkMultiplicationDimensions(Matrix rhs) const
 {
+	// no return
 }
 
 const std::pair<size_t, size_t> Matrix::getDimensions() const
