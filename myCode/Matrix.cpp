@@ -37,6 +37,7 @@ bool Matrix::checkIndexOutOfBounds(size_t row, size_t col) const
 
 void Matrix::checkAddSubtractDimensions(Matrix rhs) const
 {
+	// no return
 }
 
 void Matrix::checkMultiplicationDimensions(Matrix rhs) const
